@@ -1,28 +1,27 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import { Text, View } from '../../../src/components/Themed';
+import { Text, View } from "../../../src/components/Themed";
+import PostListItem from "../../components/PostListItem";
+import posts from "../../../assets/data/Posts.json";
+import { FlatList } from "react-native-gesture-handler";
+
+const firstpost = posts[0];
 
 export default function home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>home</Text>
+      <FlatList 
+      data={posts}
+      renderItem={({item}) => <PostListItem Post={item} /> }
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{gap:5}}
+      />
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#FFFFFF',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    backgroundColor: "#E7E7E7",
   },
 });
