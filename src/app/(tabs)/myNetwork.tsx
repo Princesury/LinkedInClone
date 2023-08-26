@@ -2,7 +2,7 @@ import { Pressable, StyleSheet,TextInput } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import { useNavigation } from 'expo-router';
 import { useLayoutEffect, useState } from 'react';
-import { useRouter } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
 
 
 export default function Networks() {
